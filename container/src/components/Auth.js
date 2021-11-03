@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { mount } from 'marketing/Marketing';
+import { mount } from 'auth/Auth';
 
-const Marketing = () => {
+const Auth = () => {
     const ref = useRef(null);
     const history = useHistory();
 
@@ -13,18 +13,18 @@ const Marketing = () => {
                 const { pathname } = history.location;
 
                 if (pathname !== nextPathname) {
-                    history.push(nextPathname);
+                    history.push(nextPathname)
                 }
             },
         });
 
         history.listen(onParentNavigate);
-
-    }, []);
+    });
 
     return (
         <div ref={ref} />
     );
+
 };
 
-export default Marketing;
+export default Auth;

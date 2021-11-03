@@ -5,7 +5,7 @@ import App from './App';
 
 const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
     const history = defaultHistory || createMemoryHistory({
-        initialEntries: [initialPath],
+        initialEntries: [initialPath]
     });
 
     if (onNavigate) {
@@ -21,12 +21,12 @@ const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
             if (pathname !== nextPathname) {
                 history.push(nextPathname);
             }
-        },
+        }
     };
 };
 
 if (process.env.NODE_ENV === 'development') {
-    const el = document.querySelector('#marketing-dev-root');
+    const el = document.querySelector('#auth-dev-root');
 
     if (el) {
         mount(el, { defaultHistory: createBrowserHistory() });
